@@ -1,21 +1,35 @@
+/* @font-face {
+    font-family: MonstersInc;
+    src: url(font/MonsterAG.ttf);
+} */
+
 img{
     max-width: 100%; /* Keeps images from escaping parent */
 }
 
+.header{
+    margin: 20px 0px;
+}
+
+.logo img{
+    max-width: 400px;
+}
+
 /* Grandparent, needs perspective so it's children can play in the 3D space */
 .card{
-    height: 300px;
-    min-width: 300px;
+    height: 200px;
+    min-width: 200px;
     border: 2px solid black;
     perspective: 500px;
 }
 
 .card-holder{
-    width: 300px;
+    width: 200px;
     position: relative;
     transform-style: preserve-3d;
     transition: all 1s;
     cursor: pointer;
+    margin-left: 25px;
 }
 
 .card-front, .card-back{
@@ -30,11 +44,20 @@ img{
 }
 
 .card-back{
-    background: url('../images/logo-bw.png') no-repeat 50%;
-    height: 300px;
-    min-width: 300px;
+    background: url('../images/monsters-inc-logo.png') no-repeat 50%;
+    opacity: 0.4;
+    height: 200px;
+    min-width: 200px;
 }
 
-.flip{
+.flip,.matched{
     transform: rotateY(180deg);
+}
+
+.matched{
+    transform: rotateY(520deg);
+}
+
+.reset-button{
+    visibility: hidden;
 }
